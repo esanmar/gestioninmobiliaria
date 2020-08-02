@@ -1,0 +1,29 @@
+El formato b&aacute;sico de una consulta SQL es el siguiente:
+<p><code><b>SELECT</b> <i><em>[Nombre_de_tabla.]</em>Campos_de_tabla</i> <b>from</b> <i>Nombre_tablas</i> [<b>WHERE</b> <i>Condiciones</i>] [<b>ORDER BY</b> <i>Campos_de_tabla</i> [<b>ASC|DESC</b>]]</code></p>
+<p>Donde los corchetes indican que la informaci&oacute;n es opcional. <i>Campos_de_tabla</i> indica los campos de la(s) tabla(s) que queremos mostrar separados por comas (,) o bien el comod&iacute;n <b>*</b> que indica <em>todos</em> los campos de la tabla. <i>Nombre_tabla</i> tambi&eacute;n indica un listado de las tablas en las que se encuentran los campos separados por comas. Si queremos mostrar campos de m&aacute;s de una tabla y coinciden sus nombres (por ejemplo, la tabla <code>OFICINA</code> y la tabla <code>EMPLEADO</code> tienen las dos un campo <code>NOMBRE</code>) y queremos mostrar ambos hay que indicar a que tabla pertenecen anteponiendo el nombre de la tabla seguido por un punto (.) al nombre del campo</p>
+<p>Algunos ejemplos de consultas simples (sin condiciones) son:
+<ul>
+    <li><code>SELECT * FROM TBL_CLIENTES</code>: Muestra todos los campos de la tabla TBL_CLIENTES</li>
+    <li><code>SELECT NOMBRE,APELLIDO1,APELLIDO2,TELEFONO FROM TBL_EMPLEADOS ORDER BY APELLIDO1</code>: Muestra el nombre, apellidos y tel&eacute;fono de los empleados ordenados por el primer apellido de forma ascendente</li>
+    <li><code>SELECT OFICINAS.NOMBRE,EMPLEADOS.NOMBRE,APELLIDO1 FROM OFICINAS,EMPLEADOS</code>: Muestra el nombre de las oficinas y los nombres y apellidos de los empleados</li>
+</ul>
+</p>
+<h4>Condiciones</h4>
+<p>Los principales operadores de condici&oacute;n son:
+<ul>
+    <li><code>=</code>: Igual</li>
+    <li><code>!=</code>: Distinto</li>
+    <li><code>&lt; &gt; &lt;= &gt;=</code>: Menor que, mayor que, menor o igual que y mayor o igual que respectivamente</li>
+    <li><code>NOT</code>: No, negaci&oacute;n de la condici&oacute;n que precede</li>
+    <li><code>LIKE</code>: Similar, parecido. Se utiliza en campos de texto. Permite el uso de los comodines <code><b>?</b></code> que substituye a una letra (cualquiera) y <code><b>%</b></code> que indica cualquier cantidad de letras.</li>
+</ul>
+Que pueden combinarse y enlazarse utilizando <code>AND</code> (y) y <code>OR</code> (o). Los campos que sean texto o fechas, deben ir entre comillas simples (') mientras que los campos num&eacute;ricos no las necesitan.</p>
+<p>Algunos ejemplos de consultas utilizando condiciones son:
+<ul>
+    <li><code>SELECT DIRECCION,PRECIO FROM PISOS <b>WHERE PRECIO&lt;=180000 AND PRECIO!=0</b></code>: Pisos de un precio distinto de 0 y menor o igual de 180000</li>
+    <li><code>SELECT DIRECCION,PRECIO FROM PISOS <b>WHERE ZONA LIKE 'CENTRO%'</b></code>: Pisos de todas las zonas que comiencen por CENTRO, como por ejemplo 'CENTRO SUR', 'CENTRO OESTE', 'CENTRO'</li>
+    <li><code>SELECT * FROM EMPLEADOS <b>WHERE (EDAD&gt;25 AND EDAD&lt;50) OR SUELDO=100</b></code>: Empleados entre 25 y 50 a&ntilde;os o cuyo sueldo sea 100</li>
+    <li><code>SELECT * FROM EMPLEADOS <b>WHERE NOMBRE LIKE '%JOS%'</b></code>: Empleados cuyo nombre contenga la cadena 'JOS', como en 'JOSE MANUEL','MIGUEL JOS&Eacute;', 'JOSELITO', etc...</li>
+</ul>
+Por supuesto SQL abarca muchas m&aacute;s cosas, sentencias compuestas, operaciones aritm&eacute;ticas, agrupaci&oacute;n de resultados, etc... Solo hemos visto una peque&ntilde;a parte, lo suficiente para poder realizar las consultas m&aacute;s simples.
+</p>

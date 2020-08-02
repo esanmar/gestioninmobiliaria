@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Informes>
+	<DB_JNDI>java:comp/env/jdbc/ifornet</DB_JNDI>
+	<Informe>
+		<Nombre>Ejercicios_de_curso</Nombre>
+		<Descripcion>Muestra los ejercicios que hay actualmente para el curso indicado.</Descripcion>
+		<Query>
+			<SQL>select TITULO,AUTOR,CAT_EJERCICIO,DESC_EJERCICIO from IFO_EJERCICIO E, IFO_CURSO C where C.ID_CURSO=? and C.ID_CURSO=E.ID_CURSO</SQL>
+			<Query_param>
+				<Id>ID_CURSO</Id>
+				<Param_desc>Curso</Param_desc>
+				<Accion tipo="curso">Curso</Accion>
+			</Query_param>
+		</Query>
+	</Informe>
+	<Informe>
+		<Nombre>Ejercicios</Nombre>
+		<Descripcion>Muestra los ejercicios que hay en la BB.DD.</Descripcion>
+		<Query>
+			<SQL>select ID_EJERCICIO,TITULO,CAT_EJERCICIO,C.NOMBRE_CURSO from IFO_EJERCICIO E, IFO_CURSO C where C.ID_CURSO=E.ID_CURSO</SQL>
+			<Detail>
+				<SQL>select TITULO,CAT_EJERCICIO,C.NOMBRE_CURSO,AUTOR,DESC_EJERCICIO from IFO_EJERCICIO E, IFO_CURSO C where E.ID_EJERCICIO=? and C.ID_CURSO=E.ID_CURSO</SQL>
+				<Detail_param>0</Detail_param>
+			</Detail>
+		</Query>
+	</Informe>
+</Informes>

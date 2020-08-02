@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!ELEMENT Informes (DB_JNDI?,Informe+)>
+<!ELEMENT Informe (Nombre, Descripcion, DB_JNDI?, Query)>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Descripcion (#PCDATA)>
+<!ELEMENT Query (SQL,Query_param*,Detail?)>
+<!ELEMENT Detail (SQL,Detail_param*)>
+<!ELEMENT SQL (#PCDATA)>
+
+<!-- ######################################################
+	Los parámetros deben ser tantos como '?'s haya en la Query.
+	Se compondrán de:
+	- El identificador que aparezca como atributo Id en el formulario
+	- Un Nombre que será el Texto que aparezca en el formulario
+	- Acción que se correponde con el tipo de objeto a poner en el
+          formulario (lo que se va a poner en el formulario HTML).
+-->
+<!ELEMENT Query_param (Id, Param_desc, Accion, DB_JNDI?)>
+<!ATTLIST Accion
+	tipo CDATA "texto">
+
+<!ELEMENT Accion (#PCDATA)>
+<!ELEMENT Id (#PCDATA)>
+<!ELEMENT Param_desc (#PCDATA)>
+<!-- Si el informe es de otra BB.DD. diferente, damos la posibilidad de acceder a través de JNDI -->
+<!ELEMENT DB_JNDI (#PCDATA)>
+
+<!--
+	Parámetros que deben estar en la QUERY original para que se pasen como parámetros al detalle
+-->
+<!ELEMENT Detail_param (#PCDATA)>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<Tasks>
+	<!-- A partir de 16/07/2003 a las 20:00 cada 86400 segundos (=24 horas) -->
+	<Task start="16/08/2003 20:00" period="86400">
+		<Desc>Fichero para el cliente</Desc>
+		<TaskClass>com.felova.misc.DBStatusBackup</TaskClass>
+		<TaskMethod>run</TaskMethod>
+	</Task>
+</Tasks>

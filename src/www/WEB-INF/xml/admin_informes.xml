@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<Informes>
+	<DB_JNDI>java:comp/env/jdbc/ifornet</DB_JNDI>
+	<Informe>
+		<Nombre>Servicios</Nombre>
+		<Descripcion>Muestra los servicios que hay actualmente.</Descripcion>
+		<Query>
+			<SQL>select ID_SERVICIO,NOMBRE_SERVICIO from IFO_SERVICIO</SQL>
+		</Query>
+	</Informe>
+	<Informe>
+		<Nombre>Ejercicios</Nombre>
+		<Descripcion>Muestra los ejercicios que hay en la BB.DD.</Descripcion>
+		<Query>
+			<SQL>select ID_EJERCICIO,TITULO,CAT_EJERCICIO,C.NOMBRE_CURSO from IFO_EJERCICIO E, IFO_CURSO C where C.ID_CURSO=E.ID_CURSO</SQL>
+			<Detail>
+				<SQL>select TITULO,CAT_EJERCICIO,C.NOMBRE_CURSO,AUTOR,DESC_EJERCICIO from IFO_EJERCICIO E, IFO_CURSO C where E.ID_EJERCICIO=? and C.ID_CURSO=E.ID_CURSO</SQL>
+				<Detail_param>0</Detail_param>
+			</Detail>
+		</Query>
+	</Informe>
+	<Informe>
+		<Nombre>Enlaces</Nombre>
+		<Descripcion>Muestra los enlaces que hay actualmente.</Descripcion>
+		<Query>
+			<SQL>SELECT ID_ENLACE,URL_ENLACE,CATEGORIA,AUTOR,TAMANO,ES_DOCUMENTO,TEXTO,FECHA FROM IFO_ENLACES</SQL>
+		</Query>
+	</Informe>
+	<Informe>
+		<Nombre>Cursos</Nombre>
+		<Descripcion>Muestra los cursos que hay actualmente.</Descripcion>
+		<Query>
+			<SQL>SELECT ID_CURSO,NOMBRE_CURSO,DURACION,PRECIO,TIPO_CURSO,URL_CURSO,FECHA_INICIO FROM IFO_CURSO</SQL>
+		</Query>
+	</Informe>
+	<Informe>
+		<Nombre>Usuarios</Nombre>
+		<Descripcion>Muestra los usuarios que hay actualmente.</Descripcion>
+		<Query>
+			<SQL>SELECT ID_USUARIO,ID_TIPO_USUARIO,ALIAS,NOMBRE,APELLIDO1,APELLIDO2,DNI,NUM_SEG_SOCIAL,SEXO,FECHA_NACIMIENTO,DIRECCION,LOCALIDAD,DISTRITO,CP,ID_PROVINCIA,TELEFONO,EMAIL,EMAIL_ALT,ID_NIVEL_ESTUDIOS,ESTUDIOS,ID_COLECTIVO,COLECTIVO_ESPECIAL,ID_CUENTA_PROPIA,ID_CUENTA_AJENA,ID_DESEMPLEO,ENTIDAD FROM IFO_USUARIO</SQL>
+		</Query>
+	</Informe>
+	<Informe>
+		<Nombre>Ejercicios_de_curso</Nombre>
+		<Descripcion>Muestra los ejercicios que hay actualmente para el curso indicado.</Descripcion>
+		<Query>
+			<SQL>select TITULO,AUTOR,CAT_EJERCICIO,DESC_EJERCICIO from IFO_EJERCICIO E, IFO_CURSO C where C.ID_CURSO=? and C.ID_CURSO=E.ID_CURSO</SQL>
+			<Query_param>
+				<Id>ID_CURSO</Id>
+				<Param_desc>Curso</Param_desc>
+				<Accion tipo="curso">Curso</Accion>
+			</Query_param>
+		</Query>
+	</Informe>
+	<Informe>
+		<Nombre>Incidencias</Nombre>
+		<Descripcion>Muestra las incidencias introducidas por los profesores.</Descripcion>
+		<Query>
+			<SQL>SELECT ID_INCIDENCIA,ENTIDAD,NOMBRE_CURSO,PROFESOR,PERIODO,ASISTENCIA,TEMARIO,EJERCICIOS,MATERIAL,COMENTARIOS,MODIFICACION,DURACION FROM ifo_incidencia </SQL>
+		</Query>
+	</Informe>
+	<Informe>
+		<Nombre>Sugerencias</Nombre>
+		<Descripcion>Muestra las sugerencias introducidas por los alumnos.</Descripcion>
+		<Query>
+			<SQL>SELECT ID_SUGERENCIA,NOMBRE,NOMBRE_CURSO,LOCALIDAD,PROFESOR,SUGERENCIA,OBSERVACION FROM ifo_sugerencia</SQL>
+		</Query>
+	</Informe>
+	<Informe>
+		<Nombre>Incidencias_de_curso</Nombre>
+		<Descripcion>Muestra los las incidencias ocurridas para el curso que se indique</Descripcion>
+		<Query>
+			<SQL>select ID_INCIDENCIA,NOMBRE_CURSO,ENTIDAD,PROFESOR,PERIODO,DURACION,COMENTARIOS,MODIFICACION,ASISTENCIA,TEMARIO,EJERCICIOS,MATERIAL from IFO_INCIDENCIA where NOMBRE_CURSO like ?</SQL>
+			<Query_param>
+				<Id>NOMBRE_CURSO</Id>
+				<Param_desc>Nombre del curso (si no es exacto escribir el nombre entre signos '%')</Param_desc>
+				<Accion tipo="texto">Nombre del curso (si no es exacto escribir el nombre entre signos '%')</Accion>
+			</Query_param>
+		</Query>
+	</Informe>
+</Informes>

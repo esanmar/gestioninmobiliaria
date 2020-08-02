@@ -1,0 +1,313 @@
+body, p,td  {
+	font-family : Tahoma, Arial, sans-serif;
+	font-size : 8pt;
+}
+
+
+h3 {
+	font-size : 12pt;
+    color: #9C3000;
+    padding-left: 5px;
+}
+
+h4 {
+	font-size : 10pt;
+    font-style: italic;
+    color: #9C3000;
+    padding-left: 5px;
+}
+
+.tdmenu  {
+	color: white;
+	font-size : 10pt;
+}
+
+th  {
+	font-size : 9pt;
+    text-align: center;
+    font-weight: bold;
+	background-color: gainsboro;
+	color: black;
+}
+
+.colorDisabled {
+	background-color: #F2F7FA;
+	color: gray;
+}
+
+.colorEnabled {
+	background-color: #F0F7F0;
+	color: black;
+}
+
+a {
+	text-decoration : none;
+	color : #9C3000;
+	cursor: hand;
+}
+
+a:visited  {
+	text-decoration : none;
+	color : #5A695A;
+	cursor: hand;
+}
+
+a:active  {
+	text-decoration : underline;
+	color : #9C3000;
+	cursor: hand;
+}
+
+a:hover  {
+	text-decoration : underline;
+	color : #9C3000;
+	cursor: hand;
+}
+
+.titEnabled {
+	color: #009D9E;
+	text-align: center;
+	font-weight: bold;
+	font-size : 10pt;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #9C3000;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #9C3000;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-left-color: #9C3000;
+    background-color: #107010;
+}
+
+    .titEnabled a:active {
+        color: white;
+    }
+    .titEnabled a:visited  {
+        color: white;
+    }
+
+
+.titDisabled {
+	color: gray;
+	text-align: center;
+	font-size : 10pt;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #9C3000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #9C3000;
+	background-color: #F0F7F0;
+	cursor: hand;
+}
+
+.titPrivDisabled {
+	color: #009D9E;
+	text-align: center;
+	font-size : 10pt;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #9C3000;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #9C3000;
+	background-color: gray;/*#E8D3C1;*/
+	cursor: hand;
+}
+
+    .titPrivDisabled a {
+        color: gainsboro;
+    }
+    .titPrivDisabled a:visited {
+        color: gainsboro;
+    }
+
+.footer  {
+	font-size : 8pt;
+	text-decoration: overline;
+	text-align: right;
+}
+
+.footerPrint  {
+	font-size : 8pt;
+	text-decoration: none;
+	text-align: right;
+}
+
+input,select,option,textarea {
+	font-size: 8pt;
+}
+
+.boton {
+	background-color: #F2F7FA;
+	font-size: 9pt;
+	color: #5A695A;
+	cursor: hand;
+}
+
+.bordeTopRojo {
+	border-top-color: #107010;/*9C3000; */
+	border-top-width: 1px; 
+	border-top-style: dotted;
+}
+
+.bordeLeftRojo {
+	border-left-color: #107010;/*9C3000; */
+	border-left-width: 1px; 
+	border-left-style: dotted;
+}
+
+.bordeRojo {
+	border-color: #107010;/*#9C3000; */
+	border-width: 1px; 
+	border-style: solid;
+}
+
+.bordeVerde {
+	border-color: #9C3000; 
+	border-width: 1px; 
+	border-style: solid;
+}
+
+.bordeVerde2 {
+	border-color: #9C3000; 
+	border-width: 1px; 
+	border-style: solid;
+}
+.bgNaranja {
+    background-color: #F0F7F0;
+}
+
+.bgVerde {
+    background-color: #5A695A;
+    color: white;
+}
+
+
+.destacado {
+	color: white;
+	background-color: #107010;
+	border-color: #F0F7F0;
+	border-width: 1px; 
+	border-style: solid;
+}
+
+    .destacado td {
+        color: white;
+    }
+
+.title  {
+	color:white;
+	font-size : 36pt;
+	font-style: italic;
+}
+.subtitle  {
+	color:white;
+	font-size : 14pt;
+	font-style: italic;
+}
+
+.verde {
+    background-color: darkgray;
+    color: #F2F7FA;
+}
+
+    .verde a:visited  {
+        text-decoration : none;
+        color : #FFBE52;
+        cursor: hand;
+    }
+
+    .verde a:active  {
+        text-decoration : underline;
+        color : white;
+        cursor: hand;
+    }
+
+    .verde a:hover  {
+        text-decoration : underline;
+        color : white;
+        cursor: hand;
+    }
+
+.nota {
+	color: #5A695A;
+	font-family : Tahoma, Arial, sans-serif;
+	font-size : 8pt;
+}
+
+.err {
+	color: white;
+    font-weight: bold;
+}
+
+.pagError {
+    background-color: black;/*#FF9A00;*/
+    color: white;
+}
+
+.submenu {
+    background-color: #107010;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    border-bottom-color: #5A695A;
+}
+    .submenu a {
+        color: white;
+    }
+    .submenu a:visited {
+        color: white;
+    }
+
+.inm {
+    color: #5A695A;
+	font-family : Verdana,Tahoma,Arial, sans-serif;
+	font-size : 11pt;
+    font-weight: bold;
+}
+
+.inmPrint {
+    color: black;
+	font-family : Verdana,Tahoma,Arial, sans-serif;
+	font-size : 11pt;
+    font-weight: bold;
+}
+
+.pslink {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #336699;
+	cursor: hand;
+}
+
+blockquote {
+    font-style: italic;
+}
+
+.traza {
+    font-size: 8pt;
+}
+
+.odd {
+    background-color: white;
+}
+
+.even {
+    background-color: #F0F7F0;
+}
+
+.bodyEnabled {
+    background-color: #107010;
+    color: white;
+}
+
+.inmTitle {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.marca {
+    background-color: lightsteelblue;
+}

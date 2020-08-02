@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!--  ######################################################
+    (c) emesa s.l. - 2003
+
+    DTD que representa los programas a invocar desde el demonio
+ ###################################################### -->
+<!ELEMENT Tasks (Task+)>
+<!--
+	** TASK **
+
+	Desc:		Descripción de la tarea
+	Class:	Nombre completo de la clase, p.ej.: net.seh.test.Prueba. Ha de tener un constructor público y sin argumentos
+	Method:	Método a invocar (en principio sin argumentos)
+	Param:	Parámetros del método (pendiente de implementación)
+
+	start:	Fecha de inicio de la tarea en formato dd/MM/yyyy [HH:mm]
+	period:	Periodo de la tarea en segundos. Si no se indica es que solo hay que ejecutarla una vez.
+			1 h			= 3600 seg
+			24 h		= 86400 seg
+			7 días	= 604800 seg
+			15 días	= 1296000 seg
+			30 días	= 2592000 seg
+-->
+<!ELEMENT Task (Desc?, TaskClass, TaskMethod, Param*)>
+<!ATTLIST Task
+	start CDATA #REQUIRED
+	period CDATA #IMPLIED>
+<!ELEMENT Desc (#PCDATA)>
+<!ELEMENT TaskClass (#PCDATA)>
+<!ELEMENT TaskMethod (#PCDATA)>
+
+<!-- A día de hoy (11/02/2003) esto no está implementado en la clase) -->
+<!ELEMENT Param EMPTY>
+<!ATTLIST Param
+	classname CDATA #IMPLIED 
+	value CDATA #IMPLIED>
